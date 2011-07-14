@@ -41,7 +41,7 @@ io.sockets.on('connection', function(client){
 	
 	
 	
-	client.on('disconnect', function(client){
+	client.on('disconnect', function(){
 		room.splice(room.indexOf(client.id),1);
 		client.broadcast.emit("deco",{'deco': client.perso.pseudo});
 		console.log('client--déconnecté-----------------------------------------');

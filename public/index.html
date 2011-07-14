@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
 <style type="text/css">
 .input {
+	z-index: 1;
 	font-weight: bold;
 	text-align: left;
 	font-size: xx-large;
@@ -32,6 +33,7 @@
 }
 
 #screen {
+	z-index: 10;
 	left: 0px;
 	visibility: visible;
 	position: fixed;
@@ -89,7 +91,7 @@ $(document).ready(function(){
   		socket.on('welcome', function(data){
   			$("#screen").css({visibility: "Hidden"});
   			console.log(data.welcome);
-  			$('#chat ul').prepend("<li class='grey'> Bienvenue ! : "+ data + "</li>");
+  			$('#chat ul').prepend("<li class='grey'> Bienvenue "+ data + " !</li>");
   			$('#chat ul li').slice(30).remove();
   	});
   	});
